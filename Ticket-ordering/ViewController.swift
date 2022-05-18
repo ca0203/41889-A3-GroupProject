@@ -9,7 +9,13 @@ import UIKit
 class ViewController: UIViewController {
     var filmManager = FilmRequest()
     var listOfFilms = [FilmInfo]()
+    
+    //test
+    var filmDetails: FilmDetails!
+    
+    //test
     var method = "filmsNowShwoing"
+    @IBOutlet var testButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +27,18 @@ class ViewController: UIViewController {
             case .success(let films):
                 self!.listOfFilms = films
             }
+        }
+        
+        
+        filmManager.getFilmDetail(for: 111) {
+            [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                self?.filmDetails = data
+            }
+            
         }
     }
     
@@ -37,6 +55,11 @@ class ViewController: UIViewController {
 
         VC.listOfFilms = self.listOfFilms
 
+    }
+    @IBAction func handleTest(_ sender: Any) {
+
+        print(filmDetails)
+        print(listOfFilms[0].film_name)
     }
 }
 

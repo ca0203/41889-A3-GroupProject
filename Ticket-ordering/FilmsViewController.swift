@@ -9,29 +9,38 @@ import UIKit
 class FilmsViewController: UIViewController {
     
     @IBOutlet var FilmsTableView: UITableView!
-
     var listOfFilms = [FilmInfo]()
-//    {
-//        didSet {
-//        DispatchQueue.main.async {
-//            self.FilmsTableView.reloadData()
-//        }
-//    }}
+    var index = 0
+    var filmManager = FilmRequest()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
-        
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        if segue.identifier == "toFilmDetail"{
+            let VC = segue.destination as! FilmsDetailController
+            let id = listOfFilms[index].film_id
+            var filmDetails: FilmDetails!
+            
+                filmManager.getFilmDetail(for: id) {
+                    [weak self] result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let data):
+                        filmDetails = data
+                    }
+            VC.filmDetails = filmDetails
+            }
+        }
+    }
 }
     
 
 extension FilmsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        index = indexPath.row
     }
 }
 extension FilmsViewController: UITableViewDataSource {
@@ -40,18 +49,21 @@ extension FilmsViewController: UITableViewDataSource {
         return listOfFilms.count    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "film", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "film", for: indexPath) as! FilmCell
+        
         let film = listOfFilms[indexPath.row]
-        cell.textLabel?.text = film.film_name
-        cell.imageView?.imageFromServerURL(urlString:  film.images.poster.one.medium.film_image, PlaceHolderImage: UIImage.init(named: "placeHolder")!)
+        cell.filmLabel.text = film.film_name
+        cell.filmImage.imageFromServerURL(urlString:  film.images.poster.one.medium.film_image, PlaceHolderImage: UIImage.init(named: "placeHolder")!)
 
         return cell
     }
-
-    
-
 }
 
+
+class FilmCell: UITableViewCell {
+    @IBOutlet var filmImage: UIImageView!
+    @IBOutlet var filmLabel: UILabel!
+}
 
 extension UIImageView {
 
