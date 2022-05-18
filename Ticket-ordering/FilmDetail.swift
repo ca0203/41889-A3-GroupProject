@@ -27,6 +27,7 @@ class FilmsDetailController: UIViewController
     @IBOutlet var textArea: UITextView!
     @IBOutlet var titleLabel: UILabel!
     var filmDetails: FilmDetails!
+    @IBOutlet var trailerButton: UIButton!
     
     
     override func viewDidLoad() {

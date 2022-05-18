@@ -8,16 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Trailer Controller-->
         <scene sceneID="cZn-ot-DIj">
             <objects>
-                <viewController id="fOT-qt-kWQ" sceneMemberID="viewController">
+                <viewController id="fOT-qt-kWQ" customClass="TrailerController" customModule="Ticket_ordering" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svw-1g-F0R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jrR-ho-DEe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hk6-Zk-Z6X"/>
+                    <connections>
+                        <outlet property="playerView" destination="svw-1g-F0R" id="0r4-N2-pGc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vjq-1v-vk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,6 +238,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIW-Sa-zqk">
+                                <rect key="frame" x="161" y="759" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <segue destination="fOT-qt-kWQ" kind="show" identifier="toTrailer" id="tTm-3g-gwT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WyO-t7-luv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -242,6 +255,7 @@
                     <connections>
                         <outlet property="textArea" destination="5ib-KG-JLy" id="Jgk-9k-dDc"/>
                         <outlet property="titleLabel" destination="0iZ-kl-qJS" id="69I-TD-PHv"/>
+                        <outlet property="trailerButton" destination="hIW-Sa-zqk" id="i1J-WQ-wo8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDj-Nc-cKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

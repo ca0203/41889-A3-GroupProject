@@ -11,9 +11,9 @@ import AVKit
 import AVFoundation
 class TrailerController: UIViewController {
     var url = ""
+    @IBOutlet var playerView: UIView!
     var player: AVPlayer!
     var playerViewController: AVPlayerViewController!
-    @IBOutlet var playerView: UIView!
     // add defualt page 
     override func viewDidLoad() {
         super.viewDidLoad()
