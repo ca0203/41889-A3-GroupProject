@@ -19,31 +19,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        filmManager.getFilm(for: method){
-            [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let films):
-                self!.listOfFilms = films
-            }
-        }
+
         
-        
-        filmManager.getFilmDetail(for: 111) {
-            [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let data):
-                self?.filmDetails = data
-            }
-            
-        }
+//
+//        filmManager.getFilmDetail(for: 111) {
+//            [weak self] result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let data):
+//                self?.filmDetails = data
+//            }
+//
+//        }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         var method = ""
         if segue.identifier == "goToNowShwoing" {
             method = "filmsNowShowing"
@@ -51,15 +44,57 @@ class ViewController: UIViewController {
         if segue.identifier == "goToComingSoon" {
             method = "filmsComingSoon"
         }
+
+            self.filmManager.getFilm(for: method){
+                [weak self] result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let films):
+                    self!.listOfFilms = films
+                }
+            }
+
         let VC = segue.destination as! FilmsViewController
 
-        VC.listOfFilms = self.listOfFilms
+            VC.listOfFilms = self.listOfFilms
 
     }
+    
+    
+    
+    
     @IBAction func handleTest(_ sender: Any) {
+        let q = DispatchQueue(label: "swiftlee.serial.queue")
+        let VC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "FilmsViewController") as! FilmsViewController
+        
+        let method = "filmsNowShowing"
+        q.async {
+            self.filmManager.getFilm(for: method){
+                [weak self] result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let films):
+                    self?.listOfFilms = films
+                }
+            }
+        }
+        q.async {
+            if self.listOfFilms.count < 1 {
+                print("error")
+            }
+            VC.listOfFilms = self.listOfFilms
+            DispatchQueue.main.async{
+                self.navigationController?.pushViewController(VC, animated: true)
+            }
+                
+            }
+            
+        }
 
-        print(filmDetails)
-        print(listOfFilms[0].film_name)
-    }
+
+    
+
 }
 

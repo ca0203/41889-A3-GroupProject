@@ -14,9 +14,13 @@ class TrailerController: UIViewController {
     var player: AVPlayer!
     var playerViewController: AVPlayerViewController!
     @IBOutlet var playerView: UIView!
-    
+    // add defualt page 
     override func viewDidLoad() {
-        LoadVideo()
+        super.viewDidLoad()
+        if url != "no"{
+            LoadVideo()
+        }
+
     }
     func LoadVideo() {
         guard let videoURL = URL(string: url) else {

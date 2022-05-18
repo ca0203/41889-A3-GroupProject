@@ -9,12 +9,14 @@ import UIKit
 class FilmsViewController: UIViewController {
     
     @IBOutlet var FilmsTableView: UITableView!
-    var listOfFilms = [FilmInfo]()
-    var index = 0
+    var listOfFilms: [FilmInfo]!
+    var index = 1
     var filmManager = FilmRequest()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if listOfFilms != nil {
+            super.viewDidLoad()
+        }
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
@@ -22,9 +24,8 @@ class FilmsViewController: UIViewController {
             let VC = segue.destination as! FilmsDetailController
             let id = listOfFilms[index].film_id
             var filmDetails: FilmDetails!
-            
-                filmManager.getFilmDetail(for: id) {
-                    [weak self] result in
+            filmManager.getFilmDetail(for: id) {
+                    result in
                     switch result {
                     case .failure(let error):
                         print(error)
@@ -41,6 +42,7 @@ class FilmsViewController: UIViewController {
 extension FilmsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
+        print(index)
     }
 }
 extension FilmsViewController: UITableViewDataSource {
@@ -53,7 +55,7 @@ extension FilmsViewController: UITableViewDataSource {
         
         let film = listOfFilms[indexPath.row]
         cell.filmLabel.text = film.film_name
-        cell.filmImage.imageFromServerURL(urlString:  film.images.poster.one.medium.film_image, PlaceHolderImage: UIImage.init(named: "placeHolder")!)
+        cell.filmImage.imageFromServerURL(urlString:  film.images.poster?.one.medium.film_image ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg", PlaceHolderImage: UIImage.init(named: "placeHolder")!)
 
         return cell
     }

@@ -8,20 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trailer Controller-->
+        <!--View Controller-->
         <scene sceneID="cZn-ot-DIj">
             <objects>
-                <viewController id="fOT-qt-kWQ" customClass="TrailerController" customModule="Ticket_ordering" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fOT-qt-kWQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svw-1g-F0R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jrR-ho-DEe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kLD-E3-JcW"/>
-                    <connections>
-                        <outlet property="playerView" destination="svw-1g-F0R" id="dEb-mo-bnv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vjq-1v-vk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,10 +167,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdfasdfkjsahldfkjhaklsjdfhklajsdhfkjlashdfkjlsadh" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFu-HB-48S">
-                                                    <rect key="frame" x="201" y="36" width="152" height="78"/>
+                                                    <rect key="frame" x="205.5" y="36" width="147.5" height="78"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="152" id="0Pe-J2-tNI"/>
-                                                        <constraint firstAttribute="height" constant="78" id="pWW-0I-P3z"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="152" id="0Pe-J2-tNI"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="78" id="pWW-0I-P3z"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -238,15 +234,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D0-2u-H7G">
-                                <rect key="frame" x="227" y="800" width="100" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="View Trailer"/>
-                                <connections>
-                                    <segue destination="fOT-qt-kWQ" kind="show" identifier="toTrailer" id="zOX-Au-L8a"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WyO-t7-luv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

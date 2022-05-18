@@ -31,9 +31,9 @@ struct FilmDetails: Decodable {
     let cast: [Cast]
     let directors: [Director]
     let duration_mins: Int
-    let review_stars: Int
+    let review_stars: Double
     let review_txt: String
-    let trailers: Trailers
+    let trailers: Trailers?
     let show_dates: [ShowDate]
 }
 
@@ -69,7 +69,17 @@ struct Genre: Decodable {
 
 
 struct Image: Decodable {
-    let poster: Index
+    var poster: Index?
+    enum CodingKeys: String, CodingKey {
+        case poster
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        if let new = try? values.decodeIfPresent(Index.self, forKey: .poster) {
+            poster = new
+        }
+    }
 }
 
 

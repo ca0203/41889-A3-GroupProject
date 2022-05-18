@@ -34,6 +34,8 @@ class FilmsDetailController: UIViewController
             super.viewDidLoad()
             titleLabel.text = filmDetails.film_name
             textArea.text = filmDetails.synopsis_long
+        } else {
+            print("error")
         }
 
         
@@ -41,7 +43,7 @@ class FilmsDetailController: UIViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTrailer" {
             let VC = segue.destination as! TrailerController
-            VC.url = filmDetails.trailers.high[0].film_trailer
+            VC.url = filmDetails.trailers?.high[0].film_trailer ?? "no"
         }
     }
     
