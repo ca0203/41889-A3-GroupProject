@@ -31,14 +31,14 @@ class FilmsDetailController: UIViewController
     
     @IBOutlet var filmDescription: UITextView!
     
+
+    
     override func viewDidLoad() {
         if filmDetails != nil {
             super.viewDidLoad()
             titleLabel.text = filmDetails.film_name
             filmDescription.text = filmDetails.synopsis_long
-            
-            
-        
+            filmDescription.isEditable = false
             
         } else {
             print("error")

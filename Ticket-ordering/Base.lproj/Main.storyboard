@@ -223,8 +223,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iZ-kl-qJS" userLabel="Film Label">
-                                <rect key="frame" x="186" y="140" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iZ-kl-qJS" userLabel="Film Label">
+                                <rect key="frame" x="100" y="140" width="227" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -247,7 +247,7 @@
                                 <rect key="frame" x="87" y="435" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ib-KG-JLy" userLabel="Film description">
+                                    <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ib-KG-JLy" userLabel="Film description">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -275,7 +275,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dKy-Qd-ZEk"/>
                     <connections>
-                        <outlet property="filmDescription" destination="5ib-KG-JLy" id="IDj-zZ-Zup"/>
+                        <outlet property="filmDescription" destination="5ib-KG-JLy" id="NXj-R6-j4I"/>
                         <outlet property="filmImage" destination="c2x-CJ-WLB" id="ZKb-Yh-FmM"/>
                         <outlet property="titleLabel" destination="0iZ-kl-qJS" id="69I-TD-PHv"/>
                         <outlet property="trailerButton" destination="hIW-Sa-zqk" id="i1J-WQ-wo8"/>
