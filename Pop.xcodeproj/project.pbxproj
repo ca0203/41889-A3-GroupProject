@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		55366E1A2827B1E400767B10 /* Ticket-ordering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ticket-ordering.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55366E1A2827B1E400767B10 /* Pop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55366E1D2827B1E400767B10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55366E1F2827B1E400767B10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		55366E212827B1E400767B10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		55366E1B2827B1E400767B10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55366E1A2827B1E400767B10 /* Ticket-ordering.app */,
+				55366E1A2827B1E400767B10 /* Pop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,19 +66,35 @@
 		55366E1C2827B1E400767B10 /* Ticket-ordering */ = {
 			isa = PBXGroup;
 			children = (
+				5674ED252836570200CEC2A0 /* Controller */,
+				5674ED24283656E400CEC2A0 /* View */,
 				A6C16EF0282E60270053C907 /* Data */,
-				55366E1D2827B1E400767B10 /* AppDelegate.swift */,
-				55366E1F2827B1E400767B10 /* SceneDelegate.swift */,
-				A6C16EF5282E8DFD0053C907 /* FilmsViewController.swift */,
-				55366E212827B1E400767B10 /* ViewController.swift */,
 				55366E232827B1E400767B10 /* Main.storyboard */,
 				55366E262827B1E700767B10 /* Assets.xcassets */,
 				55366E282827B1E700767B10 /* LaunchScreen.storyboard */,
 				55366E2B2827B1E700767B10 /* Info.plist */,
-				A66B94AC2833FF34003084DA /* FilmDetail.swift */,
-				A66B94B028351ACE003084DA /* TrailerController.swift */,
 			);
 			path = "Ticket-ordering";
+			sourceTree = "<group>";
+		};
+		5674ED24283656E400CEC2A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55366E212827B1E400767B10 /* ViewController.swift */,
+				A6C16EF5282E8DFD0053C907 /* FilmsViewController.swift */,
+				A66B94AC2833FF34003084DA /* FilmDetail.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5674ED252836570200CEC2A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A66B94B028351ACE003084DA /* TrailerController.swift */,
+				55366E1D2827B1E400767B10 /* AppDelegate.swift */,
+				55366E1F2827B1E400767B10 /* SceneDelegate.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A6C16EF0282E60270053C907 /* Data */ = {
@@ -93,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55366E192827B1E400767B10 /* Ticket-ordering */ = {
+		55366E192827B1E400767B10 /* Pop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55366E2E2827B1E700767B10 /* Build configuration list for PBXNativeTarget "Ticket-ordering" */;
+			buildConfigurationList = 55366E2E2827B1E700767B10 /* Build configuration list for PBXNativeTarget "Pop" */;
 			buildPhases = (
 				55366E162827B1E400767B10 /* Sources */,
 				55366E172827B1E400767B10 /* Frameworks */,
@@ -105,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = "Ticket-ordering";
+			name = Pop;
 			productName = "Ticket-ordering";
-			productReference = 55366E1A2827B1E400767B10 /* Ticket-ordering.app */;
+			productReference = 55366E1A2827B1E400767B10 /* Pop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55366E152827B1E400767B10 /* Build configuration list for PBXProject "Ticket-ordering" */;
+			buildConfigurationList = 55366E152827B1E400767B10 /* Build configuration list for PBXProject "Pop" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -138,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55366E192827B1E400767B10 /* Ticket-ordering */,
+				55366E192827B1E400767B10 /* Pop */,
 			);
 		};
 /* End PBXProject section */
@@ -367,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55366E152827B1E400767B10 /* Build configuration list for PBXProject "Ticket-ordering" */ = {
+		55366E152827B1E400767B10 /* Build configuration list for PBXProject "Pop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55366E2C2827B1E700767B10 /* Debug */,
@@ -376,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55366E2E2827B1E700767B10 /* Build configuration list for PBXNativeTarget "Ticket-ordering" */ = {
+		55366E2E2827B1E700767B10 /* Build configuration list for PBXNativeTarget "Pop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55366E2F2827B1E700767B10 /* Debug */,
