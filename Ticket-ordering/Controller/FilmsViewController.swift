@@ -9,21 +9,33 @@ import UIKit
 class FilmsViewController: UIViewController {
     
     @IBOutlet var FilmsTableView: UITableView!
-    var listOfFilms: [FilmInfo]!
+    var listOfFilms = [FilmInfo]()
+//    {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.FilmsTableView.reloadData()
+//            }
+//        }
+//    }
+    var method=""
     var index = 1
     var filmManager = FilmRequest()
 
     override func viewDidLoad() {
-        if listOfFilms != nil {
+        
+        if listOfFilms.count != 0 {
             super.viewDidLoad()
         }
 
     }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
         if segue.identifier == "toFilmDetail"{
             let VC = segue.destination as! FilmsDetailController
             let id = listOfFilms[index].film_id
             var filmDetails: FilmDetails!
+            print(index)
             filmManager.getFilmDetail(for: id) {
                     result in
                     switch result {
@@ -42,7 +54,7 @@ class FilmsViewController: UIViewController {
 extension FilmsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
-        print(index)
+        print("some\(index)")
     }
 }
 extension FilmsViewController: UITableViewDataSource {

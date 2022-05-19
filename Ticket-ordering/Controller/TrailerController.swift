@@ -14,7 +14,7 @@ class TrailerController: UIViewController {
     @IBOutlet var playerView: UIView!
     var player: AVPlayer!
     var playerViewController: AVPlayerViewController!
-    // add defualt page 
+    // add defualt page
     override func viewDidLoad() {
         super.viewDidLoad()
         if url != "no"{

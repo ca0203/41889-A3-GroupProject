@@ -24,19 +24,22 @@ class FilmsDetailController: UIViewController
 {
     
 
-    @IBOutlet var textArea: UITextView!
-    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var imageView: UIImageView!
     var filmDetails: FilmDetails!
     @IBOutlet var trailerButton: UIButton!
+    @IBOutlet var filmImage: UIImageView!
     
+    @IBOutlet var filmDescription: UITextView!
     
     override func viewDidLoad() {
         if filmDetails != nil {
             super.viewDidLoad()
             titleLabel.text = filmDetails.film_name
-            textArea.text = filmDetails.synopsis_long
+            filmDescription.text = filmDetails.synopsis_long
+            
+            
+        
+            
         } else {
             print("error")
         }
@@ -47,6 +50,10 @@ class FilmsDetailController: UIViewController
         if segue.identifier == "toTrailer" {
             let VC = segue.destination as! TrailerController
             VC.url = filmDetails.trailers?.high[0].film_trailer ?? "no"
+        }
+        if segue.identifier == "toPicker" {
+            let VC = segue.destination as! DatePickerController
+            VC.filmDetails = self.filmDetails
         }
     }
     

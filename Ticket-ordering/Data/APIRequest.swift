@@ -22,10 +22,9 @@ struct FilmRequest {
     let client = "UTS_0"
     let date = Date()
     var deviceTime = ""
-
+    var geolocation = "-22.0;14.0"
     
     mutating func getFilm(for method:String, completion: @escaping(Result<[FilmInfo], Error>) -> Void) {
-        let num = 100
         let urlString = "https://api-gate2.movieglu.com/\(method)/?n=100"
 //        "\(BaseUrl)\(method)/?n=\(num)"
         let urlComponent = URLComponents(string: urlString)
@@ -75,8 +74,8 @@ struct FilmRequest {
         
         let iso8601DateFormatter = ISO8601DateFormatter()
             iso8601DateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-//        deviceTime = iso8601DateFormatter.string(from: date);
-        deviceTime = "2022-05-18T10:00:56.312Z"
+        deviceTime = iso8601DateFormatter.string(from: date);
+//        deviceTime = "2022-05-18T10:00:56.312Z"
         
         request.setValue(version, forHTTPHeaderField: "api-version")
         request.setValue(authorization, forHTTPHeaderField: "Authorization")
@@ -102,6 +101,86 @@ struct FilmRequest {
             }
         }
         
+        task.resume()
+    }
+    
+    
+    
+    mutating func getFilmShowingTime(for filmId:Int,for date: String, completion: @escaping(Result<FilmShowingTime, Error>) -> Void) {
+        
+        
+        let urlString = "https://api-gate2.movieglu.com/filmShowTimes/?n=1&film_id=7772&date=2022-05-24"
+//        "\(BaseUrl)\(method)/?n=\(num)"
+        let urlComponent = URLComponents(string: urlString)
+        var request = URLRequest(url: urlComponent!.url!)
+        let iso8601DateFormatter = ISO8601DateFormatter()
+            iso8601DateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+//        deviceTime = iso8601DateFormatter.string(from: self.date);
+        deviceTime = "2022-05-19T12:57:01.028Z"
+        
+        request.setValue(version, forHTTPHeaderField: "api-version")
+        request.setValue(authorization, forHTTPHeaderField: "Authorization")
+        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        request.setValue(deviceTime, forHTTPHeaderField: "device-datetime")
+        request.setValue(terriotory, forHTTPHeaderField: "territory")
+        request.setValue(client, forHTTPHeaderField: "client")
+        request.setValue(geolocation, forHTTPHeaderField: "geolocation")
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: request) {
+            (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            if let safeData = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let data = try decoder.decode(FilmShowingTime.self, from: safeData)
+                    completion(.success(data))
+                } catch {
+                    completion(.failure(print(error) as! Error))
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    mutating func getFilmBookingLink(for filmId:Int,for cinemaId: Int, for date: String, for time: String, completion: @escaping(Result<FilmBookingLink, Error>) -> Void) {
+        
+        
+        let urlString = "https://api-gate2.movieglu.com/purchaseConfirmation/?film_id=7772&cinema_id=8930&date=2022-05-24&time=15%3A00"
+//        "\(BaseUrl)\(method)/?n=\(num)"
+        let urlComponent = URLComponents(string: urlString)
+        var request = URLRequest(url: urlComponent!.url!)
+        let iso8601DateFormatter = ISO8601DateFormatter()
+            iso8601DateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+//        deviceTime = iso8601DateFormatter.string(from: self.date);
+        deviceTime = "2022-05-19T12:57:01.028Z"
+        
+        request.setValue(version, forHTTPHeaderField: "api-version")
+        request.setValue(authorization, forHTTPHeaderField: "Authorization")
+        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        request.setValue(deviceTime, forHTTPHeaderField: "device-datetime")
+        request.setValue(terriotory, forHTTPHeaderField: "territory")
+        request.setValue(client, forHTTPHeaderField: "client")
+        request.setValue(geolocation, forHTTPHeaderField: "geolocation")
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: request) {
+            (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            if let safeData = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let data = try decoder.decode(FilmBookingLink.self, from: safeData)
+                    completion(.success(data))
+                } catch {
+                    completion(.failure(print(error) as! Error))
+                }
+            }
+        }
         task.resume()
     }
 }

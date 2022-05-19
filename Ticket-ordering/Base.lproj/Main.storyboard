@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TXg-XA-Nw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TXg-XA-Nw2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Trailer Controller-->
         <scene sceneID="cZn-ot-DIj">
             <objects>
-                <viewController id="fOT-qt-kWQ" customClass="TrailerController" customModule="Ticket_ordering" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fOT-qt-kWQ" customClass="TrailerController" customModule="Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svw-1g-F0R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ticket_ordering" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="&lt;"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SG-aJ-d6m">
-                                <rect key="frame" x="119.5" y="496" width="175.5" height="36"/>
+                                <rect key="frame" x="119.5" y="496" width="175" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncZ-dI-cVw">
-                                <rect key="frame" x="179.5" y="431" width="55.5" height="31"/>
+                                <rect key="frame" x="179.5" y="431" width="55" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="View"/>
                                 <connections>
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYi-xe-N56">
-                                <rect key="frame" x="179.5" y="783" width="55.5" height="31"/>
+                                <rect key="frame" x="179.5" y="783" width="55" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="View"/>
                                 <connections>
@@ -146,7 +146,7 @@
         <!--Movies-->
         <scene sceneID="r8f-yp-4AM">
             <objects>
-                <viewController storyboardIdentifier="FilmsViewController" id="3An-Cz-tDO" customClass="FilmsViewController" customModule="Ticket_ordering" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilmsViewController" id="3An-Cz-tDO" customClass="FilmsViewController" customModule="Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NI2-X3-uYn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="film" rowHeight="150" id="oH0-Xc-EkU" customClass="FilmCell" customModule="Ticket_ordering" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="film" rowHeight="150" id="oH0-Xc-EkU" customClass="FilmCell" customModule="Pop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="32" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oH0-Xc-EkU" id="cqr-KU-OAO">
@@ -218,7 +218,7 @@
         <!--Films Detail Controller-->
         <scene sceneID="zrV-yc-WHm">
             <objects>
-                <viewController id="nuo-gY-j9j" customClass="FilmsDetailController" customModule="Ticket_ordering" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nuo-gY-j9j" customClass="FilmsDetailController" customModule="Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7QN-MH-Hba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,15 +260,23 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="4GW-KL-FDW"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="GjU-98-AyL"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmU-gL-Uwx">
+                                <rect key="frame" x="60" y="816" width="49" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                <connections>
+                                    <segue destination="Nr8-6B-nOl" kind="show" identifier="toPicker" id="SNn-Qu-lC3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WyO-t7-luv"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="dKy-Qd-ZEk"/>
                     <connections>
-                        <outlet property="imageView" destination="c2x-CJ-WLB" id="gbs-mt-Q6V"/>
-                        <outlet property="scrollView" destination="sRx-ZM-Uyn" id="4Gt-cQ-vSn"/>
-                        <outlet property="textArea" destination="5ib-KG-JLy" id="Jgk-9k-dDc"/>
+                        <outlet property="filmDescription" destination="5ib-KG-JLy" id="IDj-zZ-Zup"/>
+                        <outlet property="filmImage" destination="c2x-CJ-WLB" id="ZKb-Yh-FmM"/>
                         <outlet property="titleLabel" destination="0iZ-kl-qJS" id="69I-TD-PHv"/>
                         <outlet property="trailerButton" destination="hIW-Sa-zqk" id="i1J-WQ-wo8"/>
                     </connections>
@@ -276,6 +284,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDj-Nc-cKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2411.594202898551" y="81.696428571428569"/>
+        </scene>
+        <!--Date Picker Controller-->
+        <scene sceneID="ZmK-F4-6dL">
+            <objects>
+                <viewController id="Nr8-6B-nOl" customClass="DatePickerController" customModule="Pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tI-5h-ipG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-zH-mEZ">
+                                <rect key="frame" x="0.0" y="299" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-lS-iVw">
+                                <rect key="frame" x="170" y="535" width="76" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Confirm"/>
+                                <connections>
+                                    <action selector="handleConfirm:" destination="Nr8-6B-nOl" eventType="touchUpInside" id="OVS-U0-Mnc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-QN-nKa">
+                                <rect key="frame" x="174" y="649" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38451834579999999" green="0.70365452250000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="handleGoToWeb:" destination="Nr8-6B-nOl" eventType="touchUpInside" id="ROa-vm-Zan"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="l3a-th-lOl">
+                                <rect key="frame" x="0.0" y="117" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="getSelectedDate:" destination="Nr8-6B-nOl" eventType="valueChanged" id="cQt-EV-ZRN"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sJs-iH-lXO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yVX-X9-Dny"/>
+                    <connections>
+                        <outlet property="confrimButton" destination="TEO-lS-iVw" id="oHN-Vh-3rs"/>
+                        <outlet property="datePicker" destination="l3a-th-lOl" id="Zs9-4C-ZiM"/>
+                        <outlet property="goButton" destination="sVk-QN-nKa" id="xwR-SW-laM"/>
+                        <outlet property="pickerView" destination="QDF-zH-mEZ" id="LBK-e4-ISl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNA-qh-ZBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407" y="732"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R9P-M2-WiQ">
