@@ -25,7 +25,9 @@ class FilmsDetailController: UIViewController
     
 
     @IBOutlet var textArea: UITextView!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
     var filmDetails: FilmDetails!
     @IBOutlet var trailerButton: UIButton!
     
