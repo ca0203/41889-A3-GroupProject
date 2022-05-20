@@ -27,6 +27,8 @@ class FilmsDetailController: UIViewController
     @IBOutlet var trailerButton: UIButton!
     @IBOutlet var filmImage: UIImageView!
     @IBOutlet var filmDescription: UITextView!
+    @IBOutlet var castLabel: UILabel!
+    @IBOutlet var directorLabel: UILabel!
     var filmDetails: FilmDetails? {
         didSet {
             configure()
@@ -45,6 +47,7 @@ class FilmsDetailController: UIViewController
                 titleLabel.text = filmDetails.film_name
                 filmDescription.text = filmDetails.synopsis_long
                 filmDescription.isEditable = false
+                
             }
             
         }
