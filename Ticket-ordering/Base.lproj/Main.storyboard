@@ -359,21 +359,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="l3a-th-lOl">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="l3a-th-lOl">
                                 <rect key="frame" x="0.0" y="197" width="414" height="234"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="hnq-lm-kp0"/>
+                                </constraints>
                                 <connections>
                                     <action selector="getSelectedDate:" destination="Nr8-6B-nOl" eventType="valueChanged" id="cQt-EV-ZRN"/>
                                 </connections>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-zH-mEZ">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-zH-mEZ">
                                 <rect key="frame" x="0.0" y="480" width="414" height="189"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="bna-Wm-1yU"/>
+                                </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-QN-nKa">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-QN-nKa">
                                 <rect key="frame" x="110" y="784" width="194" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ODd-Kp-qz0"/>
+                                </constraints>
                                 <color key="tintColor" red="0.1346374122" green="0.68842944900000003" blue="0.1963508508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Go to Website">
@@ -383,14 +389,12 @@
                                     <action selector="handleGoToWeb:" destination="Nr8-6B-nOl" eventType="touchUpInside" id="ROa-vm-Zan"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXA-pn-chg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXA-pn-chg">
                                 <rect key="frame" x="30" y="439" width="354" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ate-73-wei">
-                                <rect key="frame" x="70" y="163" width="275" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ate-73-wei">
+                                <rect key="frame" x="70" y="163" width="261.5" height="33"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please Select Date">
                                         <attributes>
@@ -402,10 +406,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-lS-iVw">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-lS-iVw">
                                 <rect key="frame" x="110" y="688" width="194" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="7Kl-EI-SHs"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Confirm">
@@ -415,9 +421,8 @@
                                     <action selector="handleConfirm:" destination="Nr8-6B-nOl" eventType="touchUpInside" id="OVS-U0-Mnc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-6N-Wvo">
-                                <rect key="frame" x="70" y="460" width="275" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-6N-Wvo">
+                                <rect key="frame" x="83" y="460" width="248.5" height="33"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please Select Time">
                                         <attributes>
@@ -432,6 +437,30 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sJs-iH-lXO"/>
                         <color key="backgroundColor" red="0.83119851349999996" green="0.83119851349999996" blue="0.83119851349999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sVk-QN-nKa" firstAttribute="leading" secondItem="TEO-lS-iVw" secondAttribute="leading" id="0LD-bU-DO2"/>
+                            <constraint firstItem="l3a-th-lOl" firstAttribute="trailing" secondItem="QDF-zH-mEZ" secondAttribute="trailing" id="58j-PH-jo4"/>
+                            <constraint firstItem="Snj-6N-Wvo" firstAttribute="centerX" secondItem="QDF-zH-mEZ" secondAttribute="centerX" id="6cI-PS-NWn"/>
+                            <constraint firstAttribute="trailing" secondItem="l3a-th-lOl" secondAttribute="trailing" id="7oP-v0-iI2"/>
+                            <constraint firstItem="Snj-6N-Wvo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ate-73-wei" secondAttribute="leading" id="CYS-Pe-nFs"/>
+                            <constraint firstItem="sJs-iH-lXO" firstAttribute="bottom" secondItem="sVk-QN-nKa" secondAttribute="bottom" constant="47" id="I97-j4-NDe"/>
+                            <constraint firstItem="sVk-QN-nKa" firstAttribute="trailing" secondItem="TEO-lS-iVw" secondAttribute="trailing" id="NF8-hH-ruT"/>
+                            <constraint firstItem="NXA-pn-chg" firstAttribute="top" secondItem="l3a-th-lOl" secondAttribute="bottom" constant="8" symbolic="YES" id="QVf-pi-1X1"/>
+                            <constraint firstItem="l3a-th-lOl" firstAttribute="top" secondItem="ate-73-wei" secondAttribute="bottom" constant="1" id="ROn-uP-Po1"/>
+                            <constraint firstItem="NXA-pn-chg" firstAttribute="leading" secondItem="9tI-5h-ipG" secondAttribute="leadingMargin" constant="10" id="RjP-OK-X7G"/>
+                            <constraint firstItem="Snj-6N-Wvo" firstAttribute="trailing" secondItem="ate-73-wei" secondAttribute="trailing" id="RmE-Jz-cEY"/>
+                            <constraint firstItem="sVk-QN-nKa" firstAttribute="top" secondItem="TEO-lS-iVw" secondAttribute="bottom" constant="64" id="WJp-em-Gef"/>
+                            <constraint firstItem="Snj-6N-Wvo" firstAttribute="top" secondItem="NXA-pn-chg" secondAttribute="bottom" constant="19" id="WMg-oS-wEy"/>
+                            <constraint firstItem="Snj-6N-Wvo" firstAttribute="centerX" secondItem="NXA-pn-chg" secondAttribute="centerX" id="hQ2-W6-fuY"/>
+                            <constraint firstItem="QDF-zH-mEZ" firstAttribute="top" secondItem="NXA-pn-chg" secondAttribute="bottom" constant="39" id="iec-hF-DbC"/>
+                            <constraint firstItem="l3a-th-lOl" firstAttribute="leading" secondItem="9tI-5h-ipG" secondAttribute="leading" id="kBN-12-wtf"/>
+                            <constraint firstItem="ate-73-wei" firstAttribute="top" secondItem="sJs-iH-lXO" secondAttribute="top" constant="23" id="pHv-Pe-O0L"/>
+                            <constraint firstItem="l3a-th-lOl" firstAttribute="leading" secondItem="QDF-zH-mEZ" secondAttribute="leading" id="sA0-SQ-eNy"/>
+                            <constraint firstItem="TEO-lS-iVw" firstAttribute="top" secondItem="QDF-zH-mEZ" secondAttribute="bottom" constant="19" id="tC8-k2-HYT"/>
+                            <constraint firstItem="TEO-lS-iVw" firstAttribute="leading" secondItem="sJs-iH-lXO" secondAttribute="leading" constant="110" id="tev-lP-RNP"/>
+                            <constraint firstItem="QDF-zH-mEZ" firstAttribute="centerX" secondItem="TEO-lS-iVw" secondAttribute="centerX" id="yx9-Bl-Uje"/>
+                            <constraint firstItem="ate-73-wei" firstAttribute="leading" secondItem="sJs-iH-lXO" secondAttribute="leading" constant="70" id="z8T-rF-r4E"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yVX-X9-Dny"/>
                     <connections>
