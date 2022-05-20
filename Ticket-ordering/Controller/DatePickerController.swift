@@ -21,7 +21,7 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
     var filmShowingTime: FilmShowingTime?
     var filmBookingLink: FilmBookingLink!
     var url: String!
-    var dataSourse:[String] = ["Empty"] {
+    var dataSourse:[String] = ["Please Select Time"] {
             didSet {
                 DispatchQueue.main.async {
                     self.pickerView.reloadAllComponents()
@@ -58,7 +58,16 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedTime = dataSourse[row]
-        confrimButton.isEnabled = true
+        goButton.isEnabled = false
+        if selectedTime == "Please Select Time" {
+            confrimButton.isEnabled = false
+        } else {
+            confrimButton.isEnabled = true
+        }
+        
+        
+        
+        
     }
     @IBAction func handleConfirm(_ sender: Any) {
         guard let cinemaId = filmShowingTime?.cinemas[0].cinema_id else { return }
@@ -88,6 +97,7 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
             case .success(let times):
                 self?.filmShowingTime = times
                 self?.dataSourse.removeAll()
+                self?.dataSourse.append("Please Select Time")
                 times.cinemas[0].showings.Standard.times.forEach { time in
                     self?.dataSourse.append(time.start_time)
                 }
