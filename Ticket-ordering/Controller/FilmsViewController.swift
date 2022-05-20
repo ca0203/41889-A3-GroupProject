@@ -10,13 +10,13 @@ class FilmsViewController: UIViewController {
     
     @IBOutlet var FilmsTableView: UITableView!
     var listOfFilms = [FilmInfo]()
-//    {
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.FilmsTableView.reloadData()
-//            }
-//        }
-//    }
+    {
+        didSet {
+            DispatchQueue.main.async {
+                self.FilmsTableView.reloadData()
+            }
+        }
+    }
     var method=""
     var index = 1
     var filmManager = FilmRequest()
