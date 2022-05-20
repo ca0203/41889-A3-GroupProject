@@ -103,7 +103,7 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
                 }
             }
         }
-
+        confrimButton.isEnabled = false
     }
  
     
