@@ -20,7 +20,6 @@ class TrailerController: UIViewController {
         if url != "no"{
             LoadVideo()
         }
-
     }
     func LoadVideo() {
         guard let videoURL = URL(string: url) else {

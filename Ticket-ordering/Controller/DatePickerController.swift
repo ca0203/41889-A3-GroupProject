@@ -18,7 +18,7 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
     var filmDetails: FilmDetails!
     var selectedTime: String!
     var selectedDate: String!
-    var filmShowingTime: FilmShowingTime!
+    var filmShowingTime: FilmShowingTime?
     var filmBookingLink: FilmBookingLink!
     var url: String!
     var dataSourse:[String] = ["Empty"] {
@@ -61,7 +61,7 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
         confrimButton.isEnabled = true
     }
     @IBAction func handleConfirm(_ sender: Any) {
-        let cinemaId = filmShowingTime.cinemas[0].cinema_id
+        guard let cinemaId = filmShowingTime?.cinemas[0].cinema_id else { return }
         let filmId = filmDetails.film_id
         
         self.filmManager.getFilmBookingLink(for: filmId, for: cinemaId, for: selectedDate, for: selectedTime){
@@ -70,14 +70,10 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
             case .failure(let error):
                 print(error)
             case .success(let url):
-                self?.filmBookingLink = url
+                self?.url = url.url
             }
         }
-        if filmBookingLink != nil {
-            url = filmBookingLink.url
-        }
         goButton.isEnabled = true
-        
     }
     
     @IBAction func getSelectedDate(_ sender: Any) {
@@ -91,15 +87,13 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
                 print(error)
             case .success(let times):
                 self?.filmShowingTime = times
-                //xin tai beng le
+                self?.dataSourse.removeAll()
+                times.cinemas[0].showings.Standard.times.forEach { time in
+                    self?.dataSourse.append(time.start_time)
+                }
             }
         }
-        if filmShowingTime != nil {
-            dataSourse.removeAll()
-            for time in filmShowingTime.cinemas[0].showings.Standard.times {
-                    self.dataSourse.append(time.start_time)
-            }
-        }
+
     }
  
     

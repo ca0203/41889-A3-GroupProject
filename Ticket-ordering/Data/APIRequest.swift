@@ -26,7 +26,6 @@ struct FilmRequest {
     
     mutating func getFilm(for method:String, completion: @escaping(Result<[FilmInfo], Error>) -> Void) {
         let urlString = "https://api-gate2.movieglu.com/\(method)/?n=100"
-//        "\(BaseUrl)\(method)/?n=\(num)"
         let urlComponent = URLComponents(string: urlString)
         var request = URLRequest(url: urlComponent!.url!)
         
@@ -58,11 +57,8 @@ struct FilmRequest {
                 }
             }
         }
-        
         task.resume()
     }
-    
-    
     
     mutating func getFilmDetail(for filmId:Int, completion: @escaping(Result<FilmDetails, Error>) -> Void) {
         let id = filmId

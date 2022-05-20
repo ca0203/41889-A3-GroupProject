@@ -192,7 +192,6 @@
                                         <connections>
                                             <outlet property="filmImage" destination="RLJ-pp-PH8" id="pQL-LS-eH7"/>
                                             <outlet property="filmLabel" destination="XFu-HB-48S" id="TCK-zh-Zom"/>
-                                            <segue destination="nuo-gY-j9j" kind="show" identifier="toFilmDetail" id="AtO-Xn-syW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -209,11 +208,12 @@
                     <navigationItem key="navigationItem" title="Movies" id="coh-oS-bsQ"/>
                     <connections>
                         <outlet property="FilmsTableView" destination="l6Q-Jh-bZA" id="qZq-W0-vB8"/>
+                        <segue destination="nuo-gY-j9j" kind="show" identifier="toFilmDetail" id="JaP-T1-V1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sky-6H-193" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.8695652173915" y="82.366071428571431"/>
+            <point key="canvasLocation" x="1686" y="82"/>
         </scene>
         <!--Films Detail Controller-->
         <scene sceneID="zrV-yc-WHm">

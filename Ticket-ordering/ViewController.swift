@@ -33,10 +33,8 @@ class ViewController: UIViewController {
 //
 //        }
     }
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+       
         var method = ""
         if segue.identifier == "goToNowShwoing" {
             method = "filmsNowShowing"
@@ -44,26 +42,18 @@ class ViewController: UIViewController {
         if segue.identifier == "goToComingSoon" {
             method = "filmsComingSoon"
         }
-
+        let VC = segue.destination as? FilmsViewController
             self.filmManager.getFilm(for: method){
-                [weak self] result in
+                [weak VC] result in
                 switch result {
                 case .failure(let error):
                     print(error)
                 case .success(let films):
-                    self!.listOfFilms = films
+                    VC?.listOfFilms = films
                 }
             }
-
-        let VC = segue.destination as! FilmsViewController
-
-            VC.listOfFilms = self.listOfFilms
-
     }
-    
-    
-    
-    
+
     @IBAction func handleTest(_ sender: Any) {
         let q = DispatchQueue(label: "swiftlee.serial.queue")
         let VC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "FilmsViewController") as! FilmsViewController
@@ -92,9 +82,5 @@ class ViewController: UIViewController {
             }
             
         }
-
-
-    
-
 }
 

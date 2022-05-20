@@ -20,7 +20,7 @@ class FilmsViewController: UIViewController {
     var method=""
     var index = 1
     var filmManager = FilmRequest()
-
+    
     override func viewDidLoad() {
         
         if listOfFilms.count != 0 {
@@ -28,35 +28,31 @@ class FilmsViewController: UIViewController {
         }
 
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
         if segue.identifier == "toFilmDetail"{
-            let VC = segue.destination as! FilmsDetailController
+            let VC = segue.destination as? FilmsDetailController
             let id = listOfFilms[index].film_id
-            var filmDetails: FilmDetails!
-            print(index)
             filmManager.getFilmDetail(for: id) {
-                    result in
+                    [weak VC] result in
                     switch result {
                     case .failure(let error):
                         print(error)
                     case .success(let data):
-                        filmDetails = data
+                        VC?.filmDetails = data
                     }
-            VC.filmDetails = filmDetails
             }
         }
     }
 }
-    
 
 extension FilmsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
-        print("some\(index)")
+        performSegue(withIdentifier: "toFilmDetail", sender: self)
     }
 }
+
 extension FilmsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +68,6 @@ extension FilmsViewController: UITableViewDataSource {
         return cell
     }
 }
-
 
 class FilmCell: UITableViewCell {
     @IBOutlet var filmImage: UIImageView!
@@ -100,7 +95,8 @@ extension UIImageView {
             })
 
         }).resume()
-    }}
+    }
+}
 
 
 
