@@ -21,6 +21,7 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
     var filmShowingTime: FilmShowingTime?
     var filmBookingLink: FilmBookingLink!
     var url: String!
+    @IBOutlet var buttonStyles: [UIButton]!
     var dataSourse:[String] = ["Please Select Time"] {
             didSet {
                 DispatchQueue.main.async {
@@ -31,6 +32,9 @@ class DatePickerController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for buttonStyle in buttonStyles {
+            buttonStyle.layer.cornerRadius = 5
+        }
         pickerView.dataSource = self
         pickerView.delegate = self
         let maxDateString = filmDetails.show_dates.last?.date ?? ""

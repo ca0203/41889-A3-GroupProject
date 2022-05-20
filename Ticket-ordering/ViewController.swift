@@ -12,12 +12,14 @@ class ViewController: UIViewController {
     var num = 1
     var method = "filmsNowShwoing"
    
+    @IBOutlet var Buttons: [UIButton]!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView2: UIImageView!
-    @IBOutlet var testButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for button in Buttons {
+            button.layer.cornerRadius = 5
+        }
     }
     
     
