@@ -20,6 +20,21 @@ class ViewController: UIViewController {
 
     }
     
+    
+    @IBAction func last(_ sender: Any) { num = num - 1
+        if num == -2{
+            num = 1
+        }
+        if num == 1{
+            imageView.image = UIImage(named:"1")
+        }
+       if num == 0{
+            imageView.image = UIImage(named:"2")
+        }
+        if num == -1{
+            imageView.image = UIImage(named:"3")
+        }
+    }
     @IBAction func next(_ sender: Any) {
         num = num + 1
                if num == 4{
@@ -36,7 +51,23 @@ class ViewController: UIViewController {
                }
     }
     
-       
+    
+    @IBAction func last1(_ sender: Any) {
+        num = num - 1
+               if num == -2{
+                   num = 1
+               }
+               if num == 1{
+                   imageView2.image = UIImage(named:"4")
+               }
+              if num == 0{
+                   imageView2.image = UIImage(named:"5")
+               }
+               if num == -1{
+                   imageView2.image = UIImage(named:"6")
+               }
+    }
+    
     @IBAction func next1(_ sender: Any) {
         num = num + 1
                if num == 4{
