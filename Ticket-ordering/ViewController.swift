@@ -55,32 +55,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func handleTest(_ sender: Any) {
-        let q = DispatchQueue(label: "swiftlee.serial.queue")
-        let VC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "FilmsViewController") as! FilmsViewController
+        let time = "13:00"
         
-        let method = "filmsNowShowing"
-        q.async {
-            self.filmManager.getFilm(for: method){
-                [weak self] result in
-                switch result {
-                case .failure(let error):
-                    print(error)
-                case .success(let films):
-                    self?.listOfFilms = films
-                }
-            }
-        }
-        q.async {
-            if self.listOfFilms.count < 1 {
-                print("error")
-            }
-            VC.listOfFilms = self.listOfFilms
-            DispatchQueue.main.async{
-                self.navigationController?.pushViewController(VC, animated: true)
-            }
-                
-            }
-            
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH%3Amm"
+        let _time = dateFormatter.date(from: time)
+        print(_time)
+    }
 }
 

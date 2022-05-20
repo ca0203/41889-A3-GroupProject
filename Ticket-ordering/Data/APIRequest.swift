@@ -105,7 +105,7 @@ struct FilmRequest {
     mutating func getFilmShowingTime(for filmId:Int,for date: String, completion: @escaping(Result<FilmShowingTime, Error>) -> Void) {
         
         
-        let urlString = "https://api-gate2.movieglu.com/filmShowTimes/?n=1&film_id=7772&date=2022-05-24"
+        let urlString = "https://api-gate2.movieglu.com/filmShowTimes/?n=1&film_id=\(filmId)&date=\(date)"
 //        "\(BaseUrl)\(method)/?n=\(num)"
         let urlComponent = URLComponents(string: urlString)
         var request = URLRequest(url: urlComponent!.url!)
@@ -144,8 +144,7 @@ struct FilmRequest {
     mutating func getFilmBookingLink(for filmId:Int,for cinemaId: Int, for date: String, for time: String, completion: @escaping(Result<FilmBookingLink, Error>) -> Void) {
         
         
-        let urlString = "https://api-gate2.movieglu.com/purchaseConfirmation/?film_id=7772&cinema_id=8930&date=2022-05-24&time=15%3A00"
-//        "\(BaseUrl)\(method)/?n=\(num)"
+        let urlString = "https://api-gate2.movieglu.com/purchaseConfirmation/?film_id=\(filmId)&cinema_id=\(cinemaId)&date=\(date)&time=\(time)"
         let urlComponent = URLComponents(string: urlString)
         var request = URLRequest(url: urlComponent!.url!)
         let iso8601DateFormatter = ISO8601DateFormatter()
