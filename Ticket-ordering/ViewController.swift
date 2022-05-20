@@ -10,28 +10,11 @@ class ViewController: UIViewController {
     var filmManager = FilmRequest()
     var listOfFilms = [FilmInfo]()
     
-    //test
-    var filmDetails: FilmDetails!
-    
-    //test
     var method = "filmsNowShwoing"
     @IBOutlet var testButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
-        
-//
-//        filmManager.getFilmDetail(for: 111) {
-//            [weak self] result in
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let data):
-//                self?.filmDetails = data
-//            }
-//
-//        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
@@ -54,13 +37,5 @@ class ViewController: UIViewController {
             }
     }
 
-    @IBAction func handleTest(_ sender: Any) {
-        let time = "13:00"
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH%3Amm"
-        let _time = dateFormatter.date(from: time)
-        print(_time)
-    }
 }
 
